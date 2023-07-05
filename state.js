@@ -6,4 +6,6 @@ const coffeeStock = {
 
 const isMakeCoffee = false;
 
-export default {coffeeStock, isMakeCoffee};
+// export default {coffeeStock, isMakeCoffee};
+
+module.exports = { coffeeStock, isMakeCoffee };

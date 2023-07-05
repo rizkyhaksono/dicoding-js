@@ -1,10 +1,16 @@
 // cara baru ES6
-import coffeeStock from "./state.js";
+// import coffeeStock from "./state.js";
 
-import { promisify } from "util";
+// import { promisify } from "util";
+
+// import gradeCalculations from "./gradeCalculations.js";
 
 // cara lama
-// const {coffeeStock} = require('./state');
+const {coffeeStock} = require('./state');
+
+const { promisify } = require('util');
+
+const {gradeCalculations} = require('./gradeCalculations');
 
 // const makeCoffee = (type, miligram) => {
 //     if (coffeeStock[type] >= miligram) {
@@ -87,3 +93,13 @@ getUsersPromise(false)
 getUsersPromise(true)
   .then(users => console.log(users))
   .catch(err => console.log(err.message)); 
+
+test('it should return exact average', () => {
+    const listValueOfExams = [80, 100, 100, 80];
+    expect(gradeCalculations.averageExams(listValueOfExams)).toEqual(90);
+})
+
+test('it should handle non-number ', () => {
+  const listValueOfExams = [80, 'a', '100', 80];
+  expect(() => averageExams(listValueOfExams)).toThrow();
+})
